@@ -12,7 +12,7 @@ namespace Shop.Web.Controllers
 {
     public class ProductsController : Controller
     {
-        private readonly DataContext _context;
+       // private readonly DataContext _context;
 
         public IRepository repository { get; }
 
