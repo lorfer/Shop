@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore.Metadata;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -8,9 +9,10 @@ using System.Threading.Tasks;
 
 namespace Shop.Web.Data.Entities
 {
-    public class Products
+    public class Products:IEntity
     {
 		public int Id { get; set; }
+
 		//DataNotacion
 		[MaxLength(50, ErrorMessage = "El campo {0} solo puede contener {1} de tamaño de longitud.")]
 		[Required]
@@ -38,5 +40,8 @@ namespace Shop.Web.Data.Entities
 		[DisplayFormat(DataFormatString = "{0:N2}", ApplyFormatInEditMode = false)]
 		
 		public double Stock { get; set; }
+
+		public User User { get; set; }
+
 	}
 }

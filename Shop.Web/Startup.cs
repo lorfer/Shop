@@ -1,13 +1,16 @@
+namespace Shop.Web
+{
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Shop.Web.Data;
-using Microsoft.EntityFrameworkCore;
-namespace Shop.Web
-{
+using Data;
+using Data.Entities;
+using Helpers;
     public class Startup
     {
         public Startup(IConfiguration configuration)
@@ -20,6 +23,18 @@ namespace Shop.Web
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddIdentity<User, IdentityRole>(cfg =>
+            {
+                cfg.User.RequireUniqueEmail = true;
+                cfg.Password.RequireDigit = false;
+                cfg.Password.RequireLowercase = false;
+                cfg.Password.RequireNonAlphanumeric = false;
+                cfg.Password.RequireUppercase = false;
+                cfg.Password.RequiredLength = 6;
+
+            }
+            ).AddEntityFrameworkStores<DataContext>();
+
             services.AddDbContext<DataContext>(cfg =>
             {
 
@@ -28,9 +43,15 @@ namespace Shop.Web
 
             services.AddTransient<SeedDb>();
 
+
             //Configurando la inyeccion por dependencia.
-            //services.AddScoped<IRepository, Repository>();
-            services.AddScoped<IRepository, MockRepository>();
+            services.AddScoped<IProductRepository, ProductRepository>();
+
+            services.AddScoped<ICountryRepository, CountryRepository>();
+            //services.AddScoped<IRepository, MockRepository>();
+
+            //Inyectando Usef
+            services.AddScoped<IUserHelper, UserHelper>();
 
             services.Configure<CookiePolicyOptions>(options =>
             {
@@ -56,6 +77,7 @@ namespace Shop.Web
             }
             app.UseHttpsRedirection();
             app.UseStaticFiles();
+            app.UseAuthentication();
 
             app.UseRouting();
 

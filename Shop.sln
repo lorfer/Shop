@@ -23,15 +23,19 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shop.UIClasic", "Shop.UICla
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shop.UIClasic.iOS", "Shop.UIClasic.iOS\Shop.UIClasic.iOS.csproj", "{D97442BF-128D-479D-A152-7386E04622A2}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shop.Web1", "Shop.Web1\Shop.Web1.csproj", "{54A7F718-312A-4026-B200-18D28D80FE2D}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shop.UIClasic.Android", "Shop.UIClasic.Android\Shop.UIClasic.Android.csproj", "{69DB1DA3-87E8-4E86-9680-DF9B659F7F09}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shop.UIFiorms.Android.Android", "Shop.UIFiorms.Android\Shop.UIFiorms.Android.Android\Shop.UIFiorms.Android.Android.csproj", "{4435D8D7-677E-4669-98C8-3708F430E1D5}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shop.UIFiorms.Android.iOS", "Shop.UIFiorms.Android\Shop.UIFiorms.Android.iOS\Shop.UIFiorms.Android.iOS.csproj", "{22E07401-0EEE-4E6A-850A-45E81E216332}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shop.UIFiorms.Android", "Shop.UIFiorms.Android\Shop.UIFiorms.Android\Shop.UIFiorms.Android.csproj", "{69CEB396-059A-44C9-B156-44AAEAD75BF5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shop.UIFiorms.Android", "Shop.UIFiorms.Android\Shop.UIFiorms.Android\Shop.UIFiorms.Android.csproj", "{69CEB396-059A-44C9-B156-44AAEAD75BF5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "OldCode", "OldCode", "{0C26D847-3B5E-44FC-AF6F-246C702C89F8}"
+	ProjectSection(SolutionItems) = preProject
+		Shop.Web\Data\IRepository.cs = Shop.Web\Data\IRepository.cs
+		Shop.Web\Data\Repository.cs = Shop.Web\Data\Repository.cs
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -111,18 +115,6 @@ Global
 		{D97442BF-128D-479D-A152-7386E04622A2}.Release|iPhone.Build.0 = Release|iPhone
 		{D97442BF-128D-479D-A152-7386E04622A2}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
 		{D97442BF-128D-479D-A152-7386E04622A2}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
-		{54A7F718-312A-4026-B200-18D28D80FE2D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{54A7F718-312A-4026-B200-18D28D80FE2D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{54A7F718-312A-4026-B200-18D28D80FE2D}.Debug|iPhone.ActiveCfg = Debug|Any CPU
-		{54A7F718-312A-4026-B200-18D28D80FE2D}.Debug|iPhone.Build.0 = Debug|Any CPU
-		{54A7F718-312A-4026-B200-18D28D80FE2D}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
-		{54A7F718-312A-4026-B200-18D28D80FE2D}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
-		{54A7F718-312A-4026-B200-18D28D80FE2D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{54A7F718-312A-4026-B200-18D28D80FE2D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{54A7F718-312A-4026-B200-18D28D80FE2D}.Release|iPhone.ActiveCfg = Release|Any CPU
-		{54A7F718-312A-4026-B200-18D28D80FE2D}.Release|iPhone.Build.0 = Release|Any CPU
-		{54A7F718-312A-4026-B200-18D28D80FE2D}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
-		{54A7F718-312A-4026-B200-18D28D80FE2D}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
 		{69DB1DA3-87E8-4E86-9680-DF9B659F7F09}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{69DB1DA3-87E8-4E86-9680-DF9B659F7F09}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{69DB1DA3-87E8-4E86-9680-DF9B659F7F09}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
@@ -193,7 +185,6 @@ Global
 		{CD494E62-1617-44C7-95E1-5A396AB1F663} = {0AEDB6DA-1ACF-4AF9-9556-2C47C3EAA663}
 		{E9901C20-DCB7-40D8-9B2F-25049D315B81} = {9BE76437-00B2-4F0E-92F9-F623432087AA}
 		{D97442BF-128D-479D-A152-7386E04622A2} = {9BE76437-00B2-4F0E-92F9-F623432087AA}
-		{54A7F718-312A-4026-B200-18D28D80FE2D} = {62A2C2C5-DFC9-405C-8F01-858C0F492DC7}
 		{69DB1DA3-87E8-4E86-9680-DF9B659F7F09} = {9BE76437-00B2-4F0E-92F9-F623432087AA}
 		{4435D8D7-677E-4669-98C8-3708F430E1D5} = {0AEDB6DA-1ACF-4AF9-9556-2C47C3EAA663}
 		{22E07401-0EEE-4E6A-850A-45E81E216332} = {0AEDB6DA-1ACF-4AF9-9556-2C47C3EAA663}
