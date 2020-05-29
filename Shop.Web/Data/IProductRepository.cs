@@ -2,10 +2,10 @@
 namespace Shop.Web.Data
 {
 	using Entities;
+	using System.Linq;
 
-	//TODO: Implement Product repository Video 12
 	public interface IProductRepository : IGenericRepository<Products>
 	{
-	
+		public IQueryable GetAllWithUser();
 	}
 }

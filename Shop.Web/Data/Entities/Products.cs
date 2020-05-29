@@ -43,5 +43,22 @@ namespace Shop.Web.Data.Entities
 
 		public User User { get; set; }
 
+		public string ImageFullPath { 
+			
+			get
+			{
+				if (string.IsNullOrEmpty(this.ImageUrl))
+				{
+					return null;
+
+				}
+				//string interpolation
+				return $"https://shoplorfe.azurewebsites.net{this.ImageUrl.Substring(1)}" ;
+
+				//return "https://shoplorfe.azurewebsites.net " + this.ImageUrl.Substring(1);
+			}
+				
+		}
+
 	}
 }
