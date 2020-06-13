@@ -24,6 +24,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "OldCode", "OldCode", "{0C26D847-3B5E-44FC-AF6F-246C702C89F8}"
 	ProjectSection(SolutionItems) = preProject
 		Shop.Web\Data\IRepository.cs = Shop.Web\Data\IRepository.cs
+		Shop.Web\Data\MockRepository.cs = Shop.Web\Data\MockRepository.cs
 		Shop.Web\Data\Repository.cs = Shop.Web\Data\Repository.cs
 	EndProjectSection
 EndProject
@@ -31,7 +32,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shop.UIForms.Android", "Sho
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shop.UIForms.iOS", "Shop.UIForms\Shop.UIForms.iOS\Shop.UIForms.iOS.csproj", "{B60BC57F-2A9B-4623-851F-2132F5E43226}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shop.UIForms", "Shop.UIForms\Shop.UIForms\Shop.UIForms.csproj", "{E84C7096-2AC2-4668-838A-50DC91E7D7C9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shop.UIForms", "Shop.UIForms\Shop.UIForms\Shop.UIForms.csproj", "{E84C7096-2AC2-4668-838A-50DC91E7D7C9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

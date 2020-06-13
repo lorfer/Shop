@@ -4,7 +4,7 @@
     using Microsoft.EntityFrameworkCore;
     using System.Linq;
 
-    public class ProductRepository : GenericRepository<Products>, IProductRepository
+    public class ProductRepository : GenericRepository<Product>, IProductRepository
     {
         public ProductRepository(DataContext context) : base(context)
         {

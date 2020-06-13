@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Shop.Web.Data.Entities
 {
-    public class Products:IEntity
+    public class Product:IEntity
     {
 		public int Id { get; set; }
 
@@ -53,11 +53,11 @@ namespace Shop.Web.Data.Entities
 
 				}
 				//string interpolation
-				return $"https://shoplorfe.azurewebsites.net{this.ImageUrl.Substring(1)}" ;
+				return $"https://shopeweblorfe.azurewebsites.net{this.ImageUrl.Substring(1)}" ;
 
 				//return "https://shoplorfe.azurewebsites.net " + this.ImageUrl.Substring(1);
 			}
-				
+			
 		}
 
 	}

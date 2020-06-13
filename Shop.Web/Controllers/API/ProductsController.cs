@@ -7,11 +7,11 @@ namespace Shop.Web.Controllers.API
 
     //Route we will access to the Api / Data Notation 
     [Route("api/[Controller]")]
-    public class ProductController: Controller
+    public class ProductsController: Controller
     {
         private readonly IProductRepository productRepository;
 
-        public ProductController(IProductRepository productRepository)
+        public ProductsController(IProductRepository productRepository)
         {
             this.productRepository = productRepository;
         }

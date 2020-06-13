@@ -25,13 +25,13 @@ namespace Shop.Web.Controllers
             this.userHelper = userHelper;
         }
 
-        // GET: Products
+        // GET: Product
         public IActionResult Index()
         {
             return View(this.productRepository.GetAll().OrderBy(p =>p.User));
         }
 
-        // GET: Products/Details/5
+        // GET: Product/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -48,7 +48,7 @@ namespace Shop.Web.Controllers
             return View(product);
         }
 
-        // GET: Products/Create
+        // GET: Product/Create
         public IActionResult Create()
         {
             return View();
@@ -65,14 +65,21 @@ namespace Shop.Web.Controllers
 
                 if (view.ImageFile != null && view.ImageFile.Length > 0)
                 {
-                    path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot\\images\\Products", view.ImageFile.FileName);
+
+                    var guid = Guid.NewGuid().ToString();
+                    var file = $"{guid}.png";
+
+                    path = Path.Combine(
+                        Directory.GetCurrentDirectory(), 
+                        "wwwroot\\images\\Products",
+                        file);
 
                     using (var stream = new FileStream(path, FileMode.Create))
                     {
                         await view.ImageFile.CopyToAsync(stream);
                     }
 
-                    path = $"~/images/Products/{view.ImageFile.FileName}";
+                    path = $"~/images/Products/{file}";
                 }
 
                 var product = this.ToProudct(view, path);
@@ -86,9 +93,9 @@ namespace Shop.Web.Controllers
             return View(view);
         }
 
-        private Products ToProudct(ProductViewModel view, string path)
+        private Product ToProudct(ProductViewModel view, string path)
         {
-            return new Products
+            return new Product
             {
                 Id = view.Id,
                 ImageUrl = path,
@@ -120,12 +127,13 @@ namespace Shop.Web.Controllers
             return View(view);
         }
 
-        private ProductViewModel ToProductViewModel(Products product)
+        private ProductViewModel ToProductViewModel(Product product)
         {
             return new ProductViewModel
             {
-                    Id = product.Id,
-                    ImageUrl = product.ImageUrl,
+                Id = product.Id,
+                //ImageUrl = product.ImageUrl,
+                    ImageUrl  = product.ImageUrl,
                     IsAvailabe = product.IsAvailabe,
                     LastPurchase = product.LastPurchase,
                     LastSale = product.LastSale,
@@ -156,18 +164,20 @@ namespace Shop.Web.Controllers
 
                     if (view.ImageFile != null && view.ImageFile.Length > 0)
                     {
-                        path = Path.Combine(Directory.GetCurrentDirectory(),
+                        var guid = Guid.NewGuid().ToString();
+                        var file = $"{guid}.png";
 
+                        path = Path.Combine(
+                            Directory.GetCurrentDirectory(),
                             "wwwroot\\images\\Products",
-
-                            view.ImageFile.FileName);
+                            file);
 
                         using (var stream = new FileStream(path, FileMode.Create))
                         {
                             await view.ImageFile.CopyToAsync(stream);
                         }
 
-                        path = $"~/images/Products/{view.ImageFile.FileName}";
+                        path = $"~/images/Products/{file}";
                     }
 
                     var product = this.ToProudct(view, path);
@@ -215,7 +225,9 @@ namespace Shop.Web.Controllers
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             var product = await this.productRepository.GetByIdAsync(id);
+
             await this.productRepository.DeleteAsync(product);
+
             return RedirectToAction(nameof(Index));
         }
     }

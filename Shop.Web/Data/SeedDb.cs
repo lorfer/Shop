@@ -63,7 +63,7 @@ namespace Shop.Web.Data
         private void AddProduct(string name, User user)
         {
 
-            this.context.Products.Add(new Products
+            this.context.Products.Add(new Product
             {
                 Name = name,
                 Price = this.random.Next(100),
