@@ -52,6 +52,7 @@ using Helpers;
 
             //Inyectando Usef
             services.AddScoped<IUserHelper, UserHelper>();
+           
 
             services.Configure<CookiePolicyOptions>(options =>
             {
